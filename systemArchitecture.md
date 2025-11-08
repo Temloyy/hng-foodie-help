@@ -3,8 +3,13 @@ FoodieHelp app system architecture breakdown
 Overview
 FoodieHelp app is a mobile application that helps users search for a particular hero ingredient or food item, either by text or by searching with their camera, giving the user a list of meals or consumables that can be made with the ingredient and step-by-step instructions with audio option. Users have access to group chats and smart pantry sync, giving them recommendations for recipes they can cook immediately.
 
-The system is designed around a modular client-server architecture with integrated machine learning and data services.
-The primary goal is to let users identify an ingredient (using their camera or by text) and instantly get contextual recipes, including voice guided cooking and pantry synchronization.
+
+![FoodieHelp System Architecture](images/FoodieHelp_System_Architecture.png)
+
+
+The app's system is designed around a client-server architecture with integrated machine learning and database services.
+
+The primary goal is to let users identify an ingredient (using their camera or by text) and instantly get recipes, including voice guided cooking and pantry synchronization.
 
 
 The Key Components for the app are:
@@ -68,4 +73,5 @@ Here is how the components communicate
 Why my Approach is Technically feasible
 
 - It is user-friendly, in the sense that simple actions lead to immediate and useful results.
-- It is accurate because the server can double-check difficult images.
+- It is accurate, because the app's server can double-check difficult images.
+It is scalable, because each major function (AI service, backend, databse) can scale independently.
