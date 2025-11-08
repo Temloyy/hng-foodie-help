@@ -1,6 +1,6 @@
-FoodieHelp app system architecture breakdown
+ # FoodieHelp App System Architecture Breakdown
 
-Overview
+ ## 💡 Overview
 FoodieHelp app is a mobile application that helps users search for a particular hero ingredient or food item, either by text or by searching with their camera, giving the user a list of meals or consumables that can be made with the ingredient and step-by-step instructions with audio option. Users have access to group chats and smart pantry sync, giving them recommendations for recipes they can cook immediately.
 
 
@@ -12,52 +12,52 @@ The app's system is designed around a client-server architecture with integrated
 The primary goal is to let users identify an ingredient (using their camera or by text) and instantly get recipes, including voice guided cooking and pantry synchronization.
 
 
-The Key Components for the app are:
-1. Frontend (Mobile App)
+## 🔆 The Key Components of the App are:
+### 1. Frontend (Mobile App)
 
-- Frontend platform: React Native
+- **Stack**: React Native
 
- Responsibilities of Frontend:
+- **Responsibilities of Frontend:**
 
--  Capturing images and sending to backend for machine learning verification.
+  - Capturing images and sending to backend for machine learning verification.
+  - Displaying recipe results, audio instructions, and group chat user interface.
 
-- Displaying recipe results, audio instructions, and group chat user interface.
+### 2. Backend
 
-2. Backend
+- **Stack**: Node.js, Heroku
 
-- Backend stack: Node.js
+- **Responsibilities of Backend:**
 
-Responsibilities of Backend:
+  - Validating incoming requests (image/text data).
 
-- Validating incoming requests (image/text data).
+  - Querying Recipe Database and AI service to generate recipe.
 
-- Querying Recipe Database and AI service to generate recipe.
+  - Handling authentication, pantry synchronization logic, and group chat session management (using WebSockets).
 
-- Handling authentication, pantry synchronization logic, and group chat session management (using WebSockets).
+### 3. Machine learning AI Service
+- **Stack**: Python, LLM 
 
-3. Machine learning AI Service (AI Recipe Engine)
-- ML AI stack: Python
+- **Responsibilities of Machine learning AI service:**
 
-Responsibilities of Machine learning AI service:
+  - Taking the ingredient input (e.g., “Beetroot”) and querying the recipe database.
 
-- Taking the ingredient input (e.g., “Beetroot”) and querying the recipe database.
+  - If the recipe options are limited, it can generate new recipe suggestions.
 
-- If the recipe options are limited, it can generate new recipe suggestions.
+  - Returning the results formatted to the backend, then the backend returns the results to the frontend for UI.
 
-- Returning the results formatted to the backend, then the backend returns the results to the frontend for UI.
+### 4. Recipe Database
 
-4. Recipe Database
+- **Stack**: PostgreSQL
 
-- Database stack: PostgreSQL
+- **Responsibilities of Recipe database:**
+  - Storing curated recipes with tags (ingredients, difficulty level, time, etc).
 
-Responsibilities of Recipe database:
- - Storing curated recipes with tags (ingredients, difficulty level, time, etc).
+  - Managing user's pantries and saved recipes.
 
-- Managing user's pantries and saved recipes.
+  - Indexing recipes for fast search and filtering.
 
-- Indexing recipes for fast search and filtering.
 
-Here is how the components communicate
+## 🔌 Here is How the Components Communicate
 
 
 - User takes a picture of an ingredient in the Mobile App (Frontend)
@@ -70,8 +70,8 @@ Here is how the components communicate
 
 - The Mobile app then displays results with an audio cooking instructions option.
 
-Why my Approach is Technically feasible
+## ⚡ Why my Approach is Technically Feasible
 
 - It is user-friendly, in the sense that simple actions lead to immediate and useful results.
 - It is accurate, because the app's server can double-check difficult images.
-It is scalable, because each major function (AI service, backend, databse) can scale independently.
+- It is scalable, because each major function (AI service, backend, databse) can scale independently.
