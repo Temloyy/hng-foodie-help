@@ -26,6 +26,8 @@ FoodieHelp solves these problems and helps to prevent wastage of those ingredien
 - Group chat for chats, games and live cooking sessions
 - AI recipe generation
 
+## 🎨 Below are High Fidelity Images of the FoodieHelp App's Wireframes
+
 ![FoodieHelpWireframes](images/FoodieHelp_Wireframes.png)
 
 ![FoodieHelpWireframes](images/FoodieHelp_Wireframes%20(2).png)
