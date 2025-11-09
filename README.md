@@ -25,3 +25,9 @@ FoodieHelp solves these problems and helps to prevent wastage of those ingredien
 - Voice guided cooking instructions
 - Group chat for chats, games and live cooking sessions
 - AI recipe generation
+
+![FoodieHelpWireframes](images/FoodieHelp_Wireframes.png)
+
+![FoodieHelpWireframes](images/FoodieHelp_Wireframes%20(2).png)
+
+![FoodieHelpWireframes](images/FoodieHelp_Wireframes%20(3).png)
